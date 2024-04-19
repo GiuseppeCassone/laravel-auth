@@ -36,7 +36,7 @@
             @enderror
         </div>
         <div class="mb-3">
-            <label for="technology" class="form-label">Prezzo</label>
+            <label for="technology" class="form-label">Tecnologie usate</label>
             <input type="text" class="form-control @error('technology') is-invalid @enderror" id="technology" name="technology" value="{{old('technology') ?? $project->technology}}">
             @error('technology')
                 <div class="invalid-feedback">
@@ -45,7 +45,7 @@
             @enderror
         </div>
         <div class="mb-3">
-            <label for="repo_links" class="form-label">Serie</label>
+            <label for="repo_links" class="form-label">Link</label>
             <input type="text" class="form-control @error('repo_links') is-invalid @enderror" id="repo_links" name="repo_links" value="{{old('repo_links') ?? $project->repo_links}}">
             @error('repo_links')
                 <div class="invalid-feedback">

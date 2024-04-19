@@ -22,7 +22,18 @@ class UpdateProjectRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|max:255',
+            'description' => 'required',
+            'image' => 'required',
+            'technology' => 'required',
+            'repo_links' => 'required',
+        ];
+    }
+
+    public function messages(): array {
+        return [
+            'max' => 'Il campo :attribute deve avere massimo :max caratteri',
+            'required' => 'Il campo :attribute non è stato inserito',
         ];
     }
 }

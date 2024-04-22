@@ -7,7 +7,7 @@
     <h3 class="mb-5">{{$project->name}}</h3>
     <div class="row">
         <div class="col-6">
-            <img class="w-100" src="{{$project->image}}" alt="">
+            <img class="w-100" src="{{asset('storage/' . $project->image)}}" alt="">
         
             <div class="py-5">
                     <a href="{{route('admin.projects.edit', $project->id)}}" class="btn btn-warning">Modifica</a>

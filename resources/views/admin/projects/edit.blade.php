@@ -4,7 +4,7 @@
 <div class="container p-5">
     <h1>Pagina edit</h1>
 
-    <form action="{{route('admin.projects.update', $project->id)}}" method="POST">
+    <form action="{{route('admin.projects.update', $project->id)}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
@@ -28,7 +28,7 @@
         </div>
         <div class="mb-3">
             <label for="image" class="form-label">Copertina</label>
-            <textarea type="text" class="form-control @error('image') is-invalid @enderror" id="image" name="image">{{old('image') ?? $project->image}}</textarea>
+            <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image" value="{{old('image') ?? $project->image}}">
             @error('image')
                 <div class="invalid-feedback">
                     {{$message}}

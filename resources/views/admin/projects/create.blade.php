@@ -4,7 +4,7 @@
 <div class="container p-5">
     <h1>Pagina create</h1>
 
-    <form action="{{route('admin.projects.store')}}" method="POST">
+    <form action="{{route('admin.projects.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <div class="mb-3">
@@ -27,7 +27,7 @@
         </div>
         <div class="mb-3">
             <label for="image" class="form-label">Copertina</label>
-            <textarea type="text" class="form-control @error('image') is-invalid @enderror" id="image" name="image">{{ old('image') }}</textarea>
+            <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image" value="{{ old('image') }}">
             @error('image')
                 <div class="invalid-feedback">
                     {{$message}}
